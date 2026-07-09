@@ -1,18 +1,15 @@
 :root{
-  --cream:#fbf3ee;
-  --cream-2:#f6e7de;
-  --blush:#f5d5cf;
-  --rose:#e6a5a0;
-  --rose-deep:#b26b6b;
-  --wine:#5a2c34;
-  --ink:#2a1a1c;
-  --gold:#b6864a;
-  --gold-soft:#d9b382;
-  --line:rgba(90,44,52,0.18);
+  --paper:#f7f5f1;
+  --paper-2:#efece6;
+  --ink:#0a0a0a;
+  --ink-soft:#1a1a1a;
+  --muted:#5a5a5a;
+  --line:rgba(10,10,10,0.18);
+  --line-soft:rgba(10,10,10,0.08);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--cream);color:var(--ink);}
+html,body{background:var(--paper);color:var(--ink);}
 body{
   font-family:'Cormorant Garamond', Georgia, serif;
   font-weight:400;
@@ -20,10 +17,10 @@ body{
   line-height:1.55;
   overflow-x:hidden;
   background:
-    radial-gradient(1200px 700px at 20% -10%, #ffe6dc 0%, transparent 60%),
-    radial-gradient(900px 600px at 110% 10%, #fbdedd 0%, transparent 55%),
-    radial-gradient(700px 500px at 50% 110%, #f6e2d3 0%, transparent 55%),
-    var(--cream);
+    radial-gradient(1200px 700px at 20% -10%, #ffffff 0%, transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, #ffffff 0%, transparent 55%),
+    radial-gradient(700px 500px at 50% 110%, #ffffff 0%, transparent 55%),
+    var(--paper);
 }
 
 /* subtle paper grain */
@@ -31,8 +28,8 @@ body{
   position:fixed;inset:0;pointer-events:none;z-index:1;
   opacity:.35;mix-blend-mode:multiply;
   background-image:
-    radial-gradient(rgba(90,44,52,0.08) 1px, transparent 1px),
-    radial-gradient(rgba(178,107,107,0.06) 1px, transparent 1px);
+    radial-gradient(rgba(10,10,10,0.08) 1px, transparent 1px),
+    radial-gradient(rgba(10,10,10,0.05) 1px, transparent 1px);
   background-size:3px 3px, 7px 7px;
   background-position:0 0, 1px 1px;
 }
@@ -46,7 +43,7 @@ body{
 }
 .rule{
   height:1px;
-  background:linear-gradient(90deg,transparent,var(--rose-deep) 20%,var(--gold) 50%,var(--rose-deep) 80%,transparent);
+  background:linear-gradient(90deg,transparent,var(--ink) 20%,var(--ink) 80%,transparent);
   opacity:.55;
   margin:0 auto;
   max-width:640px;
@@ -57,7 +54,7 @@ body{
   letter-spacing:.4em;
   font-size:11px;
   font-weight:400;
-  color:var(--rose-deep);
+  color:var(--muted);
   margin:22px 0 18px;
 }
 .title{
@@ -67,37 +64,32 @@ body{
   font-size:clamp(64px, 14vw, 168px);
   line-height:.95;
   letter-spacing:-.01em;
-  color:var(--wine);
-  background:linear-gradient(180deg, #7a3a44 0%, #b26b6b 55%, #d99a8c 100%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:0 1px 0 rgba(255,255,255,.4);
+  color:var(--ink);
   margin-bottom:14px;
   animation:reveal 1.4s ease-out both;
 }
 .title .amp{
   font-family:'Cormorant Garamond',serif;
   font-style:normal;
-  color:var(--gold);
-  -webkit-text-fill-color:var(--gold);
+  color:var(--ink);
   font-size:.6em;
   vertical-align:.25em;
   margin:0 .04em;
+  opacity:.55;
 }
 .subtitle{
   font-family:'Playfair Display',serif;
   font-size:clamp(14px,2.2vw,22px);
   letter-spacing:.28em;
   text-transform:uppercase;
-  color:var(--rose-deep);
+  color:var(--muted);
   margin-bottom:10px;
 }
-.subtitle em{font-style:italic;font-family:'Cormorant Garamond',serif;letter-spacing:.05em;text-transform:none;color:var(--wine);font-size:1.15em}
+.subtitle em{font-style:italic;font-family:'Cormorant Garamond',serif;letter-spacing:.05em;text-transform:none;color:var(--ink);font-size:1.15em}
 .tag{
   font-style:italic;
-  color:var(--wine);
-  opacity:.85;
+  color:var(--ink);
+  opacity:.75;
   font-size:clamp(16px,2.2vw,20px);
   margin:0 auto 22px;
   max-width:640px;
@@ -121,22 +113,23 @@ body{
   border-radius:2px;
   box-shadow:
     0 1px 0 rgba(255,255,255,.6) inset,
-    0 30px 60px -30px rgba(90,44,52,.35),
+    0 30px 60px -30px rgba(10,10,10,.35),
     0 0 0 1px var(--line),
-    0 0 0 8px var(--cream),
+    0 0 0 8px var(--paper),
     0 0 0 9px var(--line);
   overflow:hidden;
-  filter:saturate(.9) contrast(.98);
+  filter:grayscale(1) contrast(1.02);
+  background:#fff;
 }
 .caption{
   font-family:'Inter',sans-serif;
   font-size:11px;
   letter-spacing:.28em;
   text-transform:uppercase;
-  color:var(--rose-deep);
+  color:var(--muted);
   text-align:center;
   margin-top:18px;
-  opacity:.8;
+  opacity:.85;
 }
 
 /* HTML overlay label sitting on top of the map */
@@ -154,14 +147,14 @@ body{
   font-family:'Playfair Display', serif;
   font-style:italic;
   font-weight:700;
-  color:var(--wine);
+  color:var(--ink);
   font-size:clamp(30px, 5.5vw, 62px);
   letter-spacing:.005em;
   line-height:1;
   text-shadow:
-    0 0 10px rgba(251,243,238,1),
-    0 0 22px rgba(251,243,238,.95),
-    0 0 40px rgba(251,243,238,.85),
+    0 0 10px rgba(247,245,241,1),
+    0 0 22px rgba(247,245,241,.95),
+    0 0 40px rgba(247,245,241,.85),
     0 1px 0 rgba(255,255,255,.9);
 }
 .overlay-sub{
@@ -169,10 +162,10 @@ body{
   font-size:clamp(9px,1.1vw,11px);
   font-weight:500;
   letter-spacing:.5em;
-  color:var(--rose-deep);
+  color:var(--muted);
   margin-top:8px;
   padding-left:.5em;
-  text-shadow:0 0 10px rgba(251,243,238,1),0 0 20px rgba(251,243,238,.9);
+  text-shadow:0 0 10px rgba(247,245,241,1),0 0 20px rgba(247,245,241,.9);
 }
 
 /* -------- LETTER -------- */
@@ -197,21 +190,20 @@ body{
   font-size:5.4em;
   line-height:.85;
   margin:.05em .12em 0 0;
-  color:var(--rose-deep);
-  background:linear-gradient(180deg,#7a3a44,#e6a5a0);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  color:var(--ink);
 }
-.letter em{color:var(--rose-deep);font-style:italic}
-.letter strong{font-weight:500;color:var(--wine);letter-spacing:.02em}
+.letter em{color:var(--ink);font-style:italic;opacity:.85}
+.letter strong{font-weight:600;color:var(--ink);letter-spacing:.02em}
 .whisper{
   text-align:center;
   font-style:italic;
-  color:var(--rose-deep);
+  color:var(--ink);
   font-size:clamp(20px,2.4vw,26px) !important;
   margin-top:32px !important;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   padding:22px 0;
+  opacity:.85;
 }
 
 /* -------- STREETS -------- */
@@ -223,7 +215,7 @@ body{
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-weight:500;
-  color:var(--wine);
+  color:var(--ink);
   text-align:center;
   font-size:clamp(30px,5vw,52px);
   margin-bottom:36px;
@@ -235,37 +227,37 @@ body{
 }
 .street-card{
   position:relative;
-  background:linear-gradient(180deg, #fffaf5 0%, #fbeadf 100%);
+  background:#ffffff;
   border:1px solid var(--line);
   padding:28px 22px 24px;
   border-radius:2px;
-  box-shadow:0 10px 30px -20px rgba(90,44,52,.4);
+  box-shadow:0 10px 30px -20px rgba(10,10,10,.25);
   transition:transform .5s ease, box-shadow .5s ease;
   overflow:hidden;
 }
 .street-card::before{
   content:"";position:absolute;inset:6px;
-  border:1px solid rgba(182,134,74,.35);
+  border:1px solid var(--line-soft);
   pointer-events:none;
   border-radius:1px;
 }
-.street-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(90,44,52,.45)}
+.street-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(10,10,10,.35)}
 .street-card .num{
   font-family:'Inter',sans-serif;
   font-size:10px;
   letter-spacing:.4em;
-  color:var(--gold);
+  color:var(--muted);
 }
 .street-card h3{
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-weight:500;
-  color:var(--wine);
+  color:var(--ink);
   font-size:34px;
   margin:6px 0 10px;
 }
 .street-card p{
-  color:var(--rose-deep);
+  color:var(--muted);
   font-size:17px;
   font-style:italic;
 }
@@ -279,19 +271,20 @@ body{
   padding:0 24px;
 }
 .ornament{
-  color:var(--gold);
+  color:var(--ink);
   font-size:22px;
   margin-bottom:18px;
   letter-spacing:1em;
+  opacity:.7;
 }
 .colophon p{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-size:clamp(18px,2.2vw,22px);
-  color:var(--wine);
+  color:var(--ink);
   margin-bottom:10px;
 }
-.colophon em{color:var(--rose-deep)}
+.colophon em{color:var(--ink);opacity:.7}
 .colophon .mark{
   margin-top:22px;
   font-family:'Inter',sans-serif;
@@ -299,7 +292,7 @@ body{
   text-transform:uppercase;
   letter-spacing:.32em;
   font-size:11px;
-  color:var(--rose-deep);
+  color:var(--muted);
 }
 
 /* -------- FOOTER -------- */
@@ -314,8 +307,8 @@ footer p{
   font-size:11px;
   letter-spacing:.34em;
   text-transform:uppercase;
-  color:var(--rose-deep);
-  opacity:.75;
+  color:var(--muted);
+  opacity:.85;
 }
 
 /* -------- RESPONSIVE -------- */

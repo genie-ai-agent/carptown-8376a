@@ -23,30 +23,29 @@ const map = L.map('map', {
   attributionControl: true
 });
 
-// Soft, feminine basemap: CARTO Positron (light, minimal)
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  maxZoom: 19,
-  subdomains: 'abcd',
-  attribution: '© <a href="https://openstreetmap.org">OSM</a> · tiles © <a href="https://carto.com/">CARTO</a>'
+// Minimal black-and-white basemap: Stadia Stamen Toner Lite
+L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
+  maxZoom: 20,
+  attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a> · <a href="https://stamen.com/">Stamen</a> · <a href="https://openstreetmap.org">OSM</a>'
 }).addTo(map);
 
-// Soft halo underneath — a thick, transparent rose glow
+// Soft halo underneath — a thick, transparent black glow
 const halo = L.polygon(BOUNDARY, {
-  color: '#e6a5a0',
+  color: '#0a0a0a',
   weight: 18,
-  opacity: 0.32,
+  opacity: 0.14,
   fill: false,
   lineJoin: 'round'
 }).addTo(map);
 
-// The Carptown polygon — blush fill, wine outline, dashed like a hand-drawn boundary
+// The Carptown polygon — hand-drawn dashed boundary in ink
 const carp = L.polygon(BOUNDARY, {
-  color: '#7a3a44',
+  color: '#0a0a0a',
   weight: 2.5,
   opacity: 0.95,
   dashArray: '6, 6',
-  fillColor: '#e6a5a0',
-  fillOpacity: 0.3,
+  fillColor: '#0a0a0a',
+  fillOpacity: 0.06,
   lineJoin: 'round',
   lineCap: 'round'
 }).addTo(map);
@@ -55,18 +54,16 @@ const carp = L.polygon(BOUNDARY, {
 BOUNDARY.forEach(pt => {
   L.circleMarker(pt, {
     radius: 4,
-    color: '#7a3a44',
+    color: '#0a0a0a',
     weight: 2,
-    fillColor: '#fbf3ee',
+    fillColor: '#ffffff',
     fillOpacity: 1
   }).addTo(map);
 });
 
-// (label is rendered as an HTML overlay outside Leaflet, in index.html)
-
 // Fit map nicely around the polygon with generous breathing room
 map.fitBounds(carp.getBounds().pad(0.55));
 
-// Enable scroll zoom only after user clicks on the map (nicer scroll UX)
+// Enable scroll zoom only after user clicks on the map
 map.on('click', () => map.scrollWheelZoom.enable());
 map.on('mouseout', () => map.scrollWheelZoom.disable());
