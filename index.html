@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Carptown — a secret little neighborhood</title>
+<meta name="description" content="Carptown: the tender little pocket of the Lower East Side bounded by Clinton, Attorney, Ridge, and Pitt." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="rule"></div>
+  <p class="kicker">a quiet reveal · lower east side, new york</p>
+  <h1 class="title">
+    <span class="word">Carp<span class="amp">·</span>town</span>
+  </h1>
+  <p class="subtitle"><em>Clinton</em> · <em>Attorney</em> · <em>Ridge</em> · <em>Pitt</em></p>
+  <p class="tag">the tender little pocket at the foot of the Williamsburg Bridge</p>
+  <div class="rule"></div>
+</header>
+
+<main>
+  <section class="map-section" aria-label="Map of Carptown">
+    <div class="map-frame">
+      <div id="map" role="img" aria-label="Map showing the Carptown boundary"></div>
+      <div class="map-overlay" aria-hidden="true">
+        <div class="overlay-title">Carptown</div>
+        <div class="overlay-sub">C · A · R · P</div>
+      </div>
+    </div>
+    <p class="caption">figure 01 · the boundary, softly drawn</p>
+  </section>
+
+  <section class="letter">
+    <p class="dropcap">
+      <span class="cap">S</span>omewhere between Delancey and Rivington, tucked under the long shadow of the Williamsburg Bridge, sits a four-block secret. Locals have walked it forever. It never had a name. Now it does.
+    </p>
+    <p>
+      <strong>C.A.R.P.</strong> — for the four streets that hold it in: <em>Clinton, Attorney, Ridge, Pitt.</em> A pocket neighborhood the size of a good long walk, thick with fire escapes, bodegas, tenement iron, and the low hum of the bridge overhead.
+    </p>
+    <p class="whisper">Say it out loud. It's already yours.</p>
+  </section>
+
+  <section class="streets">
+    <h2>The four sides</h2>
+    <div class="street-grid">
+      <article class="street-card">
+        <span class="num">01</span>
+        <h3>Clinton</h3>
+        <p>the western edge · lace-thin and lamplit</p>
+      </article>
+      <article class="street-card">
+        <span class="num">02</span>
+        <h3>Attorney</h3>
+        <p>a whispered middle · almost a secret in itself</p>
+      </article>
+      <article class="street-card">
+        <span class="num">03</span>
+        <h3>Ridge</h3>
+        <p>an inner spine · quiet as pressed silk</p>
+      </article>
+      <article class="street-card">
+        <span class="num">04</span>
+        <h3>Pitt</h3>
+        <p>the eastern hem · where the bridge kisses the ground</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="colophon">
+    <div class="ornament">✦</div>
+    <p>Bordered north by <em>Delancey</em>. Bordered south by <em>Rivington</em>.</p>
+    <p>A neighborhood in the shape of a hand-drawn heart.</p>
+    <p class="mark">— Carptown, est. today</p>
+  </section>
+</main>
+
+<footer>
+  <p>a soft cartography · made with love on the L.E.S.</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>
